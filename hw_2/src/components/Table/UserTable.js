@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Table = ({userData}) =>{
 	return (
@@ -19,4 +20,9 @@ const Table = ({userData}) =>{
 		</table>
 	);
 }
+
+Table.propTypes = {
+	userData: PropTypes.array
+};
+
 export default Table;

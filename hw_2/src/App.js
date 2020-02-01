@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import './App.css';
-import Profile from "./components/Profile.js";
+import Profile from "./components/Profile";
 import TableWrap from "./components/Table";
 
 function App() {

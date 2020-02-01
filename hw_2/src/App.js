@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import './App.css';
 import Profile from "./components/Profile.js";
-import TableWrap from "./components/TableWrap.js";
+import TableWrap from "./components/Table/TableWrap.js";
 
 function App() {
 	let [stateApp, setStateApp] = useState(<Profile heandler = {formHeandler}/>);

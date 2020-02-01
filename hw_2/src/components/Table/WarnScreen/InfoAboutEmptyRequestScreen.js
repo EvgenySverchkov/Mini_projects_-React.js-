@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default () => <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Sorry...</h1>
-    <p class="lead">User not found</p>
+export default () => <div className="jumbotron jumbotron-fluid">
+  <div className="container">
+    <h1 className="display-4">Sorry...</h1>
+    <p className="lead">User not found</p>
   </div>
 </div>;

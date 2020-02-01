@@ -9,7 +9,7 @@ function App() {
 
 	function formHeandler(e){
 		e.preventDefault();
-		let userId = e.target.elements.userId.value;
+		let userId = +e.target.elements.userId.value;
 		if(!userId){
 			alert('You should enter userId to continue');
 		}else{

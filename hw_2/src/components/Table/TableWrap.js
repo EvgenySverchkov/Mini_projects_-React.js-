@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import PropTypes from 'prop-types';
 
 import UserTable from './UserTable.js';
 import BackButton from './BackButton';
@@ -26,8 +27,15 @@ const TableWrap = ({userId, backBtnHandler})=>{
 		</div>
 	);
 };
+
 const wrapStyle = {
 	width: '40%',
 	margin: '0 auto'
-}
+};
+
+TableWrap.propTypes = {
+	userId: PropTypes.number,
+	backBtnHandler: PropTypes.func
+};
+
 export default TableWrap;

@@ -8,8 +8,8 @@ describe('Test for <BackButton/>', ()=>{
 		backButtonHandler: mock
 	};
 	it('Is element here', ()=>{
-		const wra = shallow(<BackButton />);
-		const arrow = wra.text();
+		const wrapper = shallow(<BackButton />);
+		const arrow = wrapper.text();
 
 		expect(arrow).toBe('←');
 	});

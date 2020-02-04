@@ -1,9 +1,10 @@
 import React from 'react';
 import { shallow, render } from 'enzyme';
+import renderer from 'react-test-renderer';
 
 import ErrMessage from './InfoAboutEmptyRequestScreen';
 
-const wrapper = render(<ErrMessage />);
 it('Snapshot tets for <InfoAboutEmptyRequestScreen />', ()=>{
-	expect(wrapper).toMatchSnapshot();
+	const some = renderer.create(<ErrMessage />).toJSON();
+	expect(some).toMatchSnapshot();
 });

@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import BtnSquare from './buttons/BtnSquare';
 import BtnCircle from './buttons/BtnCircle';
 import BtnTriangle from './buttons/BtnTriangle';
 import BtnChangeItem from './buttons/BtnChangeItem';
 
-export default ({squareHandler, circleHandler, triangleHandler, changeItemHandler})=>{
+const BtnGroup = ({squareHandler, circleHandler, triangleHandler, changeItemHandler})=>{
 	return (
 		<div>
 			<div style={{width: '15%', margin:'0 auto'}}>
@@ -18,3 +19,12 @@ export default ({squareHandler, circleHandler, triangleHandler, changeItemHandle
 			</div>
 		</div>);
 }
+
+BtnGroup.propTypes = {
+	squareHandler: PropTypes.func,
+	circleHandler: PropTypes.func,
+	triangleHandler: PropTypes.func,
+	changeItemHandler: PropTypes.func,
+};
+
+export default BtnGroup;

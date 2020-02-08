@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const style = {
 	margin: '10px 10px 10px 10px',
@@ -17,6 +18,14 @@ const Square = ({handlerDnd, coef, dashedBorder, children, isBlackTheme}) =>{
 			 onDragStart={handlerDnd}
 			 draggable="true">{children}</div>
 	);
+};
+
+Square.propTypes = {
+	handlerDnd: PropTypes.func,
+	coef: PropTypes.number,
+	dashedBorder: PropTypes.string,
+	children: PropTypes.number,
+	isBlackTheme: PropTypes.bool
 };
 
 export default Square;

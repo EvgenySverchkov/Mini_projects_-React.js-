@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const style = {
 	width: '0px',
@@ -24,6 +25,14 @@ const Triangle = ({handlerClick, imgSRC, children, isBlackTheme}) =>{
 				<div style={{...style, borderBottom: isBlackTheme?'100px solid white': '100px solid red'}} 
 					 onClick={handlerClick}>{children}</div>}</>
 	);
+};
+
+Triangle.propTypes = {
+	handlerClick: PropTypes.func,
+	imgSRC: PropTypes.string,
+	children: PropTypes.number,
+	isBlackTheme: PropTypes.bool
+
 };
 
 export default Triangle;

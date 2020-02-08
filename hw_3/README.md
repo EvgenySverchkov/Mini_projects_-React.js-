@@ -6,7 +6,7 @@ Using high order components (HOCs)
 
 In this application you can create a shape by clicking on the corresponding button and change theme of app
 
-#Сharacteristics of each figure
+# Сharacteristics of each figure
 
 Square:
  - Each odd element can be dragged

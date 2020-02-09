@@ -22,8 +22,7 @@ const Triangle = ({imgSRC, children, isBlackTheme}) =>{
 					 width="100" 
 					 height="100" 
 					 alt=''/>: 
-				<div style={{...style, borderBottom: isBlackTheme?'100px solid white': '100px solid red'}} 
-					 >{children}</div>}
+				<div style={{...style, borderBottom: isBlackTheme?'100px solid white': '100px solid red'}}>{children}</div>}
 	</>
 	);
 };

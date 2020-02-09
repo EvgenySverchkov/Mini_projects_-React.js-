@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const style = {
 	width: '100px',
 	height: '100px',
-	//margin: '10px 10px 10px 10px',
+	margin: '10px 10px 10px 10px',
 	borderRadius: 50,
 	textAlign: 'center',
 	fontWeight: 'bold',

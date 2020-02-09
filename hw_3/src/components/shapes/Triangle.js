@@ -15,7 +15,7 @@ const imgStyle ={
 	margin: '10px 10px 10px 10px',
 }
 
-const Triangle = ({handlerClick, imgSRC, children, isBlackTheme}) =>{
+const Triangle = ({imgSRC, children, isBlackTheme}) =>{
 	return (
 	<>{imgSRC ? <img style = {{...imgStyle, filter: isBlackTheme? 'invert(100%)': 'invert(0%)' }} 
 					 src={imgSRC} 
@@ -23,7 +23,8 @@ const Triangle = ({handlerClick, imgSRC, children, isBlackTheme}) =>{
 					 height="100" 
 					 alt=''/>: 
 				<div style={{...style, borderBottom: isBlackTheme?'100px solid white': '100px solid red'}} 
-					 onClick={handlerClick}>{children}</div>}</>
+					 >{children}</div>}
+	</>
 	);
 };
 

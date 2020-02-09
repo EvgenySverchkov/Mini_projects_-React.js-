@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 
-export default (Component)=>({destroyHandler, id, isBlackTheme, children})=>{
+export default (Component)=>({id, isBlackTheme, children})=>{
 	let [state, setState] = useState(undefined);
 	function randomBg(event){
-		destroyHandler(event.target);
 		var letters = '0123456789ABCDEF';
 		var color = '#';
 		for (var i = 0; i < 6; i++) {
@@ -11,5 +10,8 @@ export default (Component)=>({destroyHandler, id, isBlackTheme, children})=>{
 		}
 		setState(color);
 	}
-	return (<Component changeBgHandl={randomBg} id={id} isBlackTheme={isBlackTheme} children={children} randomBg={state}/>);
+	return (<div onClick={randomBg}><Component isBlackTheme={isBlackTheme} 
+											   children={children}
+											   id={id}
+											   randomBg={state}/></div>);
 };

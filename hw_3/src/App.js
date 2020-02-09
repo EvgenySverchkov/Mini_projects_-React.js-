@@ -9,6 +9,7 @@ import Triangle from './components/shapes/Triangle';
 import withSquareLogic from './hocs/withSquareLogic.js';
 import withClickForImage from './hocs/withClickForImage.js';
 import withRandomChangeBg from './hocs/withRandomChangeBackground.js';
+import withDestroyCircle from './hocs/withDestroyCircle.js';
 
 class App extends React.Component{
 	constructor(){
@@ -41,10 +42,10 @@ class App extends React.Component{
 	circleHandler(){
 		let shapes = this.state.shapes;
 		const ComponentWithRandomChangeBg = withRandomChangeBg(Circle);
-		this.setState({shapes: [...shapes, <ComponentWithRandomChangeBg key={shapes.length+1} 
-																		destroyHandler={this.destroyElemWithChance} 
-																		id={shapes.length+1}
-																		isBlackTheme = {this.state.isBlackTheme}>{shapes.length+1}</ComponentWithRandomChangeBg>]});
+		const ComponentWithDestroyAndChangBg = withDestroyCircle(ComponentWithRandomChangeBg, this.destroyElemWithChance);
+		this.setState({shapes: [...shapes, <ComponentWithDestroyAndChangBg key={shapes.length+1} 
+																		   id={shapes.length+1} 
+																		   isBlackTheme = {this.state.isBlackTheme}>{shapes.length+1}</ComponentWithDestroyAndChangBg>]});
 	}
 
 	triangleHandler(){

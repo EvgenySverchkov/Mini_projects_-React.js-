@@ -15,7 +15,7 @@ export default function(Component){
 			}
 		};
 		render(){
-			return <Component {...this.props} handlerDnd={this.dndHandler}/>
+			return <div onDragStart={this.dndHandler}><Component {...this.props}/></div>;
 		}
 	}
 }

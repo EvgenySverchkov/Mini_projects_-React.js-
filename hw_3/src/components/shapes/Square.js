@@ -7,7 +7,7 @@ const style = {
 	fontWeight: 'bold'
 };
 
-const Square = ({handlerDnd, coef, dashedBorder, children, isBlackTheme}) =>{
+const Square = ({coef, dashedBorder, children, isBlackTheme}) =>{
 	return (
 		<div className="square" 
 			 style={{...style, 
@@ -15,7 +15,6 @@ const Square = ({handlerDnd, coef, dashedBorder, children, isBlackTheme}) =>{
 			 		 height: `${50*coef}px`,
 			 		 border: dashedBorder||'solid 1px black',
 			 		 background: isBlackTheme? 'white' : 'blue'}}
-			 onDragStart={handlerDnd}
 			 draggable="true">{children}</div>
 	);
 };

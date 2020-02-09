@@ -15,7 +15,7 @@ export default (Component)=>{
 			this.setState({imgSrc: imgUrl})
 		}
 		render(){
-			return <Component {...this.props} handlerClick={this.hand} imgSRC = {this.state.imgSrc}/>;
+			return <div onClick={this.hand}><Component {...this.props} imgSRC = {this.state.imgSrc}/></div>;
 		}
 	}
 }

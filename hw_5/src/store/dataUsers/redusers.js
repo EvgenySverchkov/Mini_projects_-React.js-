@@ -1,27 +1,27 @@
-import { LOADING_ALBUMS, LOADING_IMAGES, CHANGE_ALBUM_ID } from '../types';
+import { LOADING_ALBUMS_OBJ, LOADING_IMAGES_OBJ, CHANGE_ALBUM_ID } from './actions';
 
 const defaultState = {
 	albums: {},
 	images: {},
-	howAlbumImgsShow: undefined,
+	imgsFromAlbumNumber: undefined,
 }
 
 export const usersDataReducer = (state = defaultState, action)=>{
 	switch (action.type){
-		case LOADING_ALBUMS:
+		case LOADING_ALBUMS_OBJ:
 			return {
 				...state, 
 				albums: {...state.albums, ...action.payload}
 			};
-		case LOADING_IMAGES: 
+		case LOADING_IMAGES_OBJ:
 			return {
 				...state, 
-				images: {...state.images, [`${action.albumId}`]: action.payload}
+				images: {...state.images, [`${action.albumId}`]: action.payload},
 			};
 		case CHANGE_ALBUM_ID: 
 			return {
 				...state, 
-				howAlbumImgsShow: action.payload
+				imgsFromAlbumNumber: action.payload
 			};
 		default:;
 	}

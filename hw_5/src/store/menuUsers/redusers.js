@@ -1,4 +1,4 @@
-import { LOADING_MENU, CHANGE_USER_ID } from '../types';
+import { LOADING_MENU, CHANGE_USER_ID } from './actions';
 
 const defaultState = {
 	users: [],
@@ -10,7 +10,7 @@ export const userMenuReducer = (state = defaultState, action)=>{
 		case LOADING_MENU: 
 			return {
 				...state, 
-				users : action.payload
+				users : action.payload,
 			};
 		case CHANGE_USER_ID: 
 			return {

@@ -8,14 +8,16 @@ import Img from './components/UserImage.js';
 
 function App(props) {
 	function screens(){
-		if(props.viewAlbumsUser && !props.albumViewImg){
+		if(props.viewAlbumsUser && !props.imgsFromAlbumNumber){
 			return props.albumState[props.viewAlbumsUser].map((item)=><Albums key={item.id} 
 																			  title={item.title}
 																			  albumId = {item.id}
 																			  userId = {item.userId}/>);
-		}else if(props.albumViewImg){
-			return props.imgs[props.albumViewImg].map(item=><Img key={item.id} 
+		}else if(props.imgsFromAlbumNumber){
+			return props.imgs[props.imgsFromAlbumNumber].map(item=><Img key={item.id} 
 																 url={item.thumbnailUrl}/>);
+		}else if(props.isFetching){
+			return <div>...Loading</div>
 		}
 	}
 	return (
@@ -37,7 +39,7 @@ function mapStateToProps(state) {
   	albumState: state.dataUsers.albums,
   	viewAlbumsUser: state.menuUsers.viewAlbumsUser,
   	imgs: state.dataUsers.images,
-  	albumViewImg: state.dataUsers.howAlbumImgsShow
+  	imgsFromAlbumNumber: state.dataUsers.imgsFromAlbumNumber,
   };
 }
 

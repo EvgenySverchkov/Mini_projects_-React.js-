@@ -1,11 +1,8 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import { loadingAlbums, chnageHowAlbumImgShow } from '../../store/dataUsers/actions';
+import { chnageHowAlbumImgShow, loadAlbums } from '../../store/dataUsers/actions';
 import { chnageViewAlbumsUser } from '../../store/menuUsers/actions';
-
-import getAlbums from '../../services/requestForData';
-import { userAlbums } from '../../urls';
 
 import MenuItem from './MenuItem';
 
@@ -14,14 +11,12 @@ class MenuItemContainer extends React.Component{
 		super(props);
 		this.handlerClick = this.handlerClick.bind(this);
 	}
+	
 	componentDidMount(){
-		const {userId, loadingAlbums} = this.props;
-
-		getAlbums(userAlbums(userId))
-			.then(data=>{
-				loadingAlbums({[`${userId}`]: data})
-			});
+		const {userId, loadAlbums} = this.props;
+		loadAlbums(userId);
 	}
+
 	handlerClick(){
 		this.props.chnageHowAlbumImgShow(undefined);
 		this.props.chnageViewAlbumsUser(this.props.userId);
@@ -36,5 +31,5 @@ class MenuItemContainer extends React.Component{
 
 export default connect(
 null,
-{ loadingAlbums, chnageViewAlbumsUser, chnageHowAlbumImgShow }
+{ chnageViewAlbumsUser, chnageHowAlbumImgShow, loadAlbums }
 )(MenuItemContainer);

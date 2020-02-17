@@ -1,9 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import getImages from '../services/requestForData';
-import {albumPhotos} from '../urls';
-import { loadImages, chnageHowAlbumImgShow } from '../store/dataUsers/actions';
+import { chnageHowAlbumImgShow, loadImages } from '../store/dataUsers/actions';
 
 import UserAlbum from './UserAlbum';
 
@@ -13,9 +11,8 @@ class UserAlbumContainer extends React.Component{
 		this.handlerClick = this.handlerClick.bind(this);
 	}
 	componentDidMount(){
-		console.log(this.props.albumId)
-		getImages(albumPhotos(this.props.albumId))
-			.then(data=>this.props.loadImages(this.props.albumId, data));
+		const {loadImages, albumId} = this.props;
+		loadImages(albumId);
 	}
 	handlerClick(){
 		this.props.chnageHowAlbumImgShow(this.props.albumId);

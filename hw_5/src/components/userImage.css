@@ -1,0 +1,12 @@
+.imagePost{
+	margin: 20px;
+	width: 100px;
+	white-space: normal;
+}
+
+.imagePost img{
+	margin:0 auto;
+	width: 100px; 
+	height:100px;
+	display: block;
+}

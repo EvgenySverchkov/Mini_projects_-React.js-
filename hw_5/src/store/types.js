@@ -1,0 +1,6 @@
+export const LOADING_MENU = 'LOADING_MENU';
+export const LOADING_ALBUMS = 'LOADING_ALBUMS';
+export const CHANGE_USER_ID = 'CHANGE_USER_ID';
+export const LOADING_IMAGES = 'LOADING_IMAGES';
+export const CHANGE_ALBUM_ID = 'CHANGE_ALBUM_ID';
+export const LOAD_USERS = 'LOAD_USERS';
